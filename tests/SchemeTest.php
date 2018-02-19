@@ -18,11 +18,11 @@ class SchemeTest extends TestCase
         $this->assertFalse($this->scheme->contains('Context_var_unexistent'));
     }
     public function testSchemeDefaultValue(){
-        $this->assertEquals('Default Value', $this->scheme->default('Context_var_1'));
+        $this->assertEquals('Default Value', $this->scheme->defaultVal('Context_var_1'));
     }
     public function testSchemeDefaultValueWithoutSetDefault(){
         $this->scheme->add('Context_var_without_default');
-        $this->assertNull($this->scheme->default('Context_var_without_default'));
+        $this->assertNull($this->scheme->defaultVal('Context_var_without_default'));
     }
     public function testSchemeCastToString(){
         $this->assertEquals('Context value', $this->scheme->cast('Context_var_1', 'Context value'));

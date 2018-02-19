@@ -19,7 +19,7 @@ class ContextTest extends TestCase
     public function testContextRetrievingSetOptionalValue(){
         $value = 42;
         $this->scheme->method('contains')->willReturn(true);
-        $this->scheme->method('default')->willReturn(0);
+        $this->scheme->method('defaultVal')->willReturn(0);
         $this->scheme->method('cast')->willReturn((string)$value);
         $this->driver->method('resolve')->willReturn(42);
 

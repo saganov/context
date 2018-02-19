@@ -31,7 +31,7 @@ interface IScheme
      *
      * @return mixed
      */
-    public function default($key);
+    public function defaultVal($key);
 
     /**
      * Cast the provided value according to the registered cast function

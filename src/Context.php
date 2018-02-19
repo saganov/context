@@ -13,7 +13,7 @@ class Context
 
     public function get($key){
         if ($this->scheme->contains($key)){
-            $value = $this->driver->resolve($key, $this->scheme->default($key));
+            $value = $this->driver->resolve($key, $this->scheme->defaultVal($key));
             // TODO: there is knowing of Context about Scheme that
             // default value NULL means required key
             if (is_null($value)) throw new RequiredKeyException("Required context key: '{$key}' left unset");
