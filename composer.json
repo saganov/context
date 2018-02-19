@@ -13,6 +13,7 @@
         "psr-4": {"Context\\": "src"}
     },
     "require-dev": {
-        "phpunit/phpunit": "^6"
+        "phpunit/phpunit": "^6",
+        "phpdocumentor/phpdocumentor": "2.*"
     }
 }
