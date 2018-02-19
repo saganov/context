@@ -9,11 +9,12 @@ class Scheme implements IScheme
         $this->items = $items;
     }
 
-    public function add($key, $default, $castFunction = null){
+    public function add($key, $default = null, $castFunction = null){
         if (is_null($castFunction)){
             $castFunction = function($value){return (string) $value;};
         }
         $this->items[$key] = array('default' => $default, 'cast' => $castFunction);
+        return $this;
     }
 
     public function contains($key){
