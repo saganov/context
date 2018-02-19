@@ -2,7 +2,7 @@
 
 namespace Context;
 
-class Context
+class Context implements IContext
 {
     private $scheme;
     private $driver;
