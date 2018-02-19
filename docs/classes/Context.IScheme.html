@@ -144,19 +144,19 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-49943728"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-654311958"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-49943728" class="accordion-body collapse in">
+            <div id="namespace-654311958" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1958380339"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1250701501"></a>
                                 <a href="../namespaces/Context.html" style="margin-left: 30px; padding-left: 0">Context</a>
             </div>
-            <div id="namespace-1958380339" class="accordion-body collapse ">
+            <div id="namespace-1250701501" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                     
@@ -194,17 +194,9 @@
                                             </nav>
                     <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
 
-                    <h1><small>\Context</small>IContextDriver</h1>
-                    <p><em>Interface for any concrete Context drivers</em></p>
-                    <p>Concrete driver could provide data from different sources:</p>
-<ul>
-<li>environment variables</li>
-<li>command line interface</li>
-<li>ini-files</li>
-<li>XML-files</li>
-<li>HTTP request parameters
-etc.</li>
-</ul>
+                    <h1><small>\Context</small>IScheme</h1>
+                    <p><em></em></p>
+                    
 
                     <section id="summary">
                         <h2>Summary</h2>
@@ -218,7 +210,10 @@ etc.</li>
                         </section>
                         <section class="row-fluid public">
                             <section class="span6">
-                                                                    <a href="../classes/Context.IContextDriver.html#method_resolve">resolve()</a><br />
+                                                                    <a href="../classes/Context.IScheme.html#method_add">add()</a><br />
+                                                                    <a href="../classes/Context.IScheme.html#method_contains">contains()</a><br />
+                                                                    <a href="../classes/Context.IScheme.html#method_defaultVal">defaultVal()</a><br />
+                                                                    <a href="../classes/Context.IScheme.html#method_cast">cast()</a><br />
                                                             </section>
                             <section class="span6">
                                                                     <em>No constants found</em>
@@ -246,7 +241,7 @@ etc.</li>
                                         <dl>
                         <dt>File</dt>
                             <dd>
-                                <a href="../files/IContextDriver.html"><div class="path-wrapper">IContextDriver.php</div></a>
+                                <a href="../files/IScheme.html"><div class="path-wrapper">IScheme.php</div></a>
                             </dd>
                                                 <dt>Package</dt>
                             <dd><div class="namespace-wrapper">\Default</div></dd>
@@ -269,27 +264,143 @@ etc.</li>
 
                                     <div class="row-fluid">
         <div class="span8 content class">
-            <a id="method_resolve" name="method_resolve" class="anchor"></a>
+            <a id="method_add" name="method_add" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">resolve()</h3>
+                <h3 class="public ">add()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">resolve(string  <span class="argument">$key</span>, mixed  <span class="argument">$default = null</span>) : mixed</pre>
-                <p><em>Try to resolve value of retrieved context key</em></p>
-                <p>Resolve the value of key according to the concrete implementation
-It could resolve from environment variables, command line interface,
-INI-files, XML-files, HTTP parameters etc.</p>
+                <pre class="signature" style="margin-right: 54px;">add(string  <span class="argument">$key</span>, mixed  <span class="argument">$default = null</span>, \Context\Closure  <span class="argument">$castFunction = null</span>) : \Context\IScheme</pre>
+                <p><em>Register new context configuration option</em></p>
+                
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
                                 <td>string</td>
                                 <td>$key </td>
-                                <td><p>Key of the context configuration option</p></td>
+                                <td><p>Key of the context option</p></td>
                             </tr>
                                                     <tr>
                                 <td>mixed</td>
                                 <td>$default </td>
-                                <td><p>Default value to use in case the retrieved key wasn't set</p></td>
+                                <td><p>Default value for the key. NULL means the key is required</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\Context\Closure</td>
+                                <td>$castFunction </td>
+                                <td><p>Function to cast provided value. NULL means cast to String</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Context.IScheme.html">\Context\IScheme</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_contains" name="method_contains" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">contains()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">contains(string  <span class="argument">$key</span>) : boolean</pre>
+                <p><em>Verify if the key has already registered</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$key </td>
+                                <td><p>Key of the context option</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_defaultVal" name="method_defaultVal" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">defaultVal()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">defaultVal(string  <span class="argument">$key</span>) : mixed</pre>
+                <p><em>Provide default value of registered context key</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$key </td>
+                                <td><p>Key of the context option</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    mixed
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_cast" name="method_cast" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">cast()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">cast(string  <span class="argument">$key</span>, mixed  <span class="argument">$value</span>) : mixed</pre>
+                <p><em>Cast the provided value according to the registered cast function</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$key </td>
+                                <td><p>Key of the context option</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$value </td>
+                                <td><p>a Value to cast</p></td>
                             </tr>
                                             </table>
                 
@@ -316,10 +427,10 @@ INI-files, XML-files, HTTP parameters etc.</p>
     <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h3 id="source-view-label">IContextDriver.php</h3>
+            <h3 id="source-view-label">IScheme.php</h3>
         </div>
         <div class="modal-body">
-            <pre data-src="../files/IContextDriver.php.txt" class="language-php"></pre>
+            <pre data-src="../files/IScheme.php.txt" class="language-php"></pre>
         </div>
     </div>
 
