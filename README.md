@@ -17,10 +17,10 @@ So, appropriate **Parser** consume **Scheme** and read data from particular sour
 Business goals
 ==============
 
-1 Make an application independent from the source and format of its configuration storage
-1 Make it possible to store parameters on different sources (CLI, files, HTTP, database etc.) and formats (ini, json, xml, yml etc.)
-1 Make it possible to define comprehensive default values
-1 Make it possinble to properly convert values to the correct data type
+1. Make an application independent from the source and format of its configuration storage
+1. Make it possible to store parameters on different sources (CLI, files, HTTP, database etc.) and formats (ini, json, xml, yml etc.)
+1. Make it possible to define comprehensive default values
+1. Make it possinble to properly convert values to the correct data type
 
 Researching
 ===========
