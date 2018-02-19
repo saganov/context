@@ -21,7 +21,7 @@ class Scheme implements IScheme
         return key_exists($key, $this->items);
     }
 
-    public function default($key){
+    public function defaultVal($key){
         return $this->items[$key]['default'];
     }
 
