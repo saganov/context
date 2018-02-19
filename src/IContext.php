@@ -11,7 +11,7 @@
 
 namespace Context;
 
-interface iContext
+interface IContext
 {
     /**
      * Retrieve the context config option calue by specified key
