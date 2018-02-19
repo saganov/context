@@ -20,6 +20,10 @@ class SchemeTest extends TestCase
     public function testSchemeDefaultValue(){
         $this->assertEquals('Default Value', $this->scheme->default('Context_var_1'));
     }
+    public function testSchemeDefaultValueWithoutSetDefault(){
+        $this->scheme->add('Context_var_without_default');
+        $this->assertNull($this->scheme->default('Context_var_without_default'));
+    }
     public function testSchemeCastToString(){
         $this->assertEquals('Context value', $this->scheme->cast('Context_var_1', 'Context value'));
     }
