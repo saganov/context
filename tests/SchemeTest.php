@@ -23,5 +23,13 @@ class SchemeTest extends TestCase
     public function testSchemeCastToString(){
         $this->assertEquals('Context value', $this->scheme->cast('Context_var_1', 'Context value'));
     }
+    public function testSchemeCastToInteger(){
+        $this->scheme->add('Context_integer', null, function($v){return (int)$v;});
+        $this->assertEquals(42, $this->scheme->cast('Context_integer', '42'));
+    }
+    public function testSchemeCastToBoolean(){
+        $this->scheme->add('Context_boolean', null, function($v){return (bool)$v;});
+        $this->assertTrue($this->scheme->cast('Context_boolean', '1'));
+    }
 
 }
