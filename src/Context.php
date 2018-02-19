@@ -6,7 +6,7 @@ class Context
 {
     private $scheme;
     private $driver;
-    public function __construct(Scheme $scheme, ContextDriver $driver){
+    public function __construct(IScheme $scheme, IContextDriver $driver){
         $this->scheme = $scheme;
         $this->driver = $driver;
     }
