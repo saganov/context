@@ -4,8 +4,42 @@ namespace Context;
 
 interface IScheme
 {
-    public function add($key, $default, $castFunction = null);
+    /**
+    * Register new context configuration option
+    *
+    * @param string $key           Key of the context option
+    * @param mixed  $default       Default value for the key. NULL means the key is required
+    * @param Closure $castFunction Function to cast provided value. NULL means cast to String
+    *
+    * @return IScheme
+    */
+    public function add($key, $default = null, $castFunction = null);
+
+    /**
+     * Verify if the key has already registered
+     *
+     * @param string $key Key of the context option
+     *
+     * @return boolean
+     */
     public function contains($key);
-    public function cast($key, $value);
+
+    /**
+     * Provide default value of registered context key
+     *
+     * @param string $key Key of the context option
+     *
+     * @return mixed
+     */
     public function default($key);
+
+    /**
+     * Cast the provided value according to the registered cast function
+     *
+     * @param string $key   Key of the context option
+     * @param mixed  $value a Value to cast
+     *
+     * @return mixed
+     */
+    public function cast($key, $value);
 }
