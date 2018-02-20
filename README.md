@@ -31,3 +31,42 @@ Existent Libs and Docs:
 - Python Argparse library
 - Symfony Command Library
 
+Implementation
+==============
+
+Class diagram of prototype:
+
+![Context prototype](http://www.plantuml.com/plantuml/png/TP312i8m38RlUOeUrT4ty31G3vu5xw7DjD1sq6H3KD_Tsgsu7Jmb97--FqdBWac6uC55eTIX8NM-c3i5UaA3rcwsq9W-2hh8tznIXuENA_hIGPOStylfGrRJGux9ZPGov4QJn7XaLfMjdL3WfGMxmlhdC8sVuZZpCu8BgpheHDpxaOeQrcielQjdmHpL_gMrghMLkdH-Jj1IjFb57m00)
+
+<details>
+<summary>Source code for PlantUML:</summary>
+```
+@startuml
+interface IScheme{
++add()
++contains()
++defaultVal()
++cast()
+}
+interface IContextDriver{
++get()
+}
+class Scheme{
+-items
++add()
++consist()
++defaultVal()
++cast()
+}
+class EnvContext{
+-scheme
++get()
+-resolve()
+}
+
+IContextDriver -* IScheme
+IScheme <|-- Scheme
+IContextDriver<|-- EnvContext
+@enduml
+```
+</details>
