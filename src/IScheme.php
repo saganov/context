@@ -11,6 +11,15 @@
 
 namespace Context;
 
+/**
+ * Scheme of the context configuration
+ *
+ * In fact this is just container that contains a scheme.
+ * In fact it is a map - key to the description of the 
+ * configuration options:
+ * - default value (NULL means this key is mandatory)
+ * - cast function
+ */
 interface IScheme
 {
     /**

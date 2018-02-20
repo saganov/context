@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
  * This file is part of the SContext package.
  *
  * (c) Petr Saganov <saganoff@gmail.com>
@@ -24,7 +24,15 @@ namespace Context;
  */
 interface IContextDriver
 {
+    /**
+     * Constructor have to consume a Schem
+     *
+     * @param IScheme $scheme Scheme of the configutration context
+     *
+     * @return IContextDriver
+     */
     public function __construct(IScheme $scheme);
+  
     /**
      * Try to resolve value of retrieved context key
      *
