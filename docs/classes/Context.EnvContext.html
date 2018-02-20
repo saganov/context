@@ -114,12 +114,12 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">38</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">29</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="../reports/markers.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">1</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">1</span>
                                 </a>
                             </li>
                             <li>
@@ -144,28 +144,26 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1184540442"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-2020082453"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1184540442" class="accordion-body collapse in">
+            <div id="namespace-2020082453" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1840005633"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-709414466"></a>
                                 <a href="../namespaces/Context.html" style="margin-left: 30px; padding-left: 0">Context</a>
             </div>
-            <div id="namespace-1840005633" class="accordion-body collapse ">
+            <div id="namespace-709414466" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                     
                     <ul>
-                                                    <li class="interface"><a href="../classes/Context.IContext.html">IContext</a></li>
                                                     <li class="interface"><a href="../classes/Context.IContextDriver.html">IContextDriver</a></li>
                                                     <li class="interface"><a href="../classes/Context.IScheme.html">IScheme</a></li>
-                                                                                                    <li class="class"><a href="../classes/Context.Context.html">Context</a></li>
-                                                    <li class="class"><a href="../classes/Context.EnvVariablesDriver.html">EnvVariablesDriver</a></li>
+                                                                                                    <li class="class"><a href="../classes/Context.EnvContext.html">EnvContext</a></li>
                                                     <li class="class"><a href="../classes/Context.RequiredKeyException.html">RequiredKeyException</a></li>
                                                     <li class="class"><a href="../classes/Context.Scheme.html">Scheme</a></li>
                                                     <li class="class"><a href="../classes/Context.UnknownKeyException.html">UnknownKeyException</a></li>
@@ -194,7 +192,7 @@
                                             </nav>
                     <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
 
-                    <h1><small>\Context</small>EnvVariablesDriver</h1>
+                    <h1><small>\Context</small>EnvContext</h1>
                     <p><em></em></p>
                     
                     
@@ -214,8 +212,8 @@
                         </section>
                         <section class="row-fluid public">
                             <section class="span4">
-                                                                    <a href="../classes/Context.EnvVariablesDriver.html#method___construct" class="">__construct()</a><br />
-                                                                    <a href="../classes/Context.EnvVariablesDriver.html#method_resolve" class="">resolve()</a><br />
+                                                                    <a href="../classes/Context.EnvContext.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/Context.EnvContext.html#method_get" class="">get()</a><br />
                                                             </section>
                             <section class="span4">
                                                                     <em>No public properties found</em>
@@ -237,10 +235,10 @@
                         </section>
                         <section class="row-fluid private">
                             <section class="span4">
-                                                                    <em>No private methods found</em>
+                                                                    <a href="../classes/Context.EnvContext.html#method_resolve" class="">resolve()</a><br />
                                                             </section>
                             <section class="span4">
-                                                                    <em>No private properties found</em>
+                                                                    <a href="../classes/Context.EnvContext.html#property_scheme" class="">$scheme</a><br />
                                                             </section>
                             <section class="span4">
                                 <em>N/A</em>
@@ -253,12 +251,12 @@
                     
                     <dl>
                         <dt>File</dt>
-                            <dd><a href="../files/EnvVariablesDriver.html"><div class="path-wrapper">EnvVariablesDriver.php</div></a></dd>
+                            <dd><a href="../files/EnvContext.html"><div class="path-wrapper">EnvContext.php</div></a></dd>
                                                 <dt>Package</dt>
                             <dd><div class="namespace-wrapper">Default</div></dd>
                                                 <dt>Class hierarchy</dt>
                             <dd class="hierarchy">
-                                                                                                                                                                    <div class="namespace-wrapper">\Context\EnvVariablesDriver</div>
+                                                                                                                                                                    <div class="namespace-wrapper">\Context\EnvContext</div>
                             </dd>
 
                                                                             <dt>Implements</dt>
@@ -276,7 +274,39 @@
             </div>
 
                         
-                        
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_scheme" name="property_scheme" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$scheme</h3>
+                <pre class="signature">$scheme : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                            
                                     <a id="methods" name="methods"></a>
             <div class="row-fluid">
                 <div class="span8 content class"><h2>Methods</h2></div>
@@ -289,13 +319,23 @@
             <article class="method">
                 <h3 class="public ">__construct()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">__construct() </pre>
-                <p><em></em></p>
+                <pre class="signature" style="margin-right: 54px;">__construct(\Context\IScheme  <span class="argument">$scheme</span>) : \Context\IContextDriver</pre>
+                <p><em>Constructor have to consume a Schem</em></p>
                 
 
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td><a href="../classes/Context.IScheme.html">\Context\IScheme</a></td>
+                                <td>$scheme </td>
+                                <td><p>Scheme of the configutration context</p></td>
+                            </tr>
+                                            </table>
                 
                 
-                				
+                                    <h4>Returns</h4>
+                    <a href="../classes/Context.IContextDriver.html">\Context\IContextDriver</a>
+                                    				
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -311,11 +351,11 @@
 
                                     <div class="row-fluid">
         <div class="span8 content class">
-            <a id="method_resolve" name="method_resolve" class="anchor"></a>
+            <a id="method_get" name="method_get" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">resolve()</h3>
+                <h3 class="public ">get()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">resolve(string  <span class="argument">$key</span>, mixed  <span class="argument">$default = null</span>) : mixed</pre>
+                <pre class="signature" style="margin-right: 54px;">get(string  <span class="argument">$key</span>) : mixed</pre>
                 <p><em>Try to resolve value of retrieved context key</em></p>
                 <p>Resolve the value of key according to the concrete implementation
 It could resolve from environment variables, command line interface,
@@ -327,11 +367,6 @@ INI-files, XML-files, HTTP parameters etc.</p>
                                 <td>string</td>
                                 <td>$key </td>
                                 <td><p>Key of the context configuration option</p></td>
-                            </tr>
-                                                    <tr>
-                                <td>mixed</td>
-                                <td>$default </td>
-                                <td><p>Default value to use in case the retrieved key wasn't set</p></td>
                             </tr>
                                             </table>
                 
@@ -352,16 +387,55 @@ INI-files, XML-files, HTTP parameters etc.</p>
         </aside>
     </div>
 
-                                                                    </div>
+                                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_resolve" name="method_resolve" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">resolve()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">resolve(  <span class="argument">$key</span>,   <span class="argument">$default = null</span>) </pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$key </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$default </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    </div>
     </section>
 
     <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h3 id="source-view-label">EnvVariablesDriver.php</h3>
+            <h3 id="source-view-label">EnvContext.php</h3>
         </div>
         <div class="modal-body">
-            <pre data-src="../files/EnvVariablesDriver.php.txt" class="language-php line-numbers"></pre>
+            <pre data-src="../files/EnvContext.php.txt" class="language-php line-numbers"></pre>
         </div>
     </div>
 
@@ -402,7 +476,7 @@ INI-files, XML-files, HTTP parameters etc.</p>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on February 19th, 2018 at 23:38.
+                    on February 20th, 2018 at 21:25.
                 </section>
             </section>
         </section>
