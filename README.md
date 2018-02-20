@@ -40,6 +40,7 @@ Class diagram of prototype:
 
 <details>
 <summary>Source code for PlantUML:</summary>
+<p>
 ```
 @startuml
 interface IScheme{
@@ -69,4 +70,5 @@ IScheme <|-- Scheme
 IContextDriver<|-- EnvContext
 @enduml
 ```
+</p>
 </details>
