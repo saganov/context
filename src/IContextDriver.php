@@ -24,6 +24,7 @@ namespace Context;
  */
 interface IContextDriver
 {
+    public function __construct(IScheme $scheme);
     /**
      * Try to resolve value of retrieved context key
      *
@@ -32,9 +33,8 @@ interface IContextDriver
      * INI-files, XML-files, HTTP parameters etc.
      *
      * @param string $key     Key of the context configuration option
-     * @param mixed  $default Default value to use in case the retrieved key wasn't set
      *
      * @return mixed
      */
-    public function resolve($key, $default = null);
+    public function get($key);
 }

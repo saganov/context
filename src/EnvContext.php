@@ -2,26 +2,28 @@
 
 namespace Context;
 
-class Context implements IContext
+class EnvContext implements IContextDriver
 {
     private $scheme;
-    private $driver;
-    public function __construct(IScheme $scheme, IContextDriver $driver){
+    public function __construct(IScheme $scheme){
         $this->scheme = $scheme;
-        $this->driver = $driver;
     }
 
     public function get($key){
         if ($this->scheme->contains($key)){
-            $value = $this->driver->resolve($key, $this->scheme->defaultVal($key));
-            // TODO: there is knowing of Context about Scheme that
-            // default value NULL means required key
+            $value = $this->resolve($key, $this->scheme->defaultVal($key));
+            // TODO: there is knowledge about Scheme that
+            // default value = NULL means required key
             if (is_null($value)) throw new RequiredKeyException("Required context key: '{$key}' left unset");
             $value = $this->scheme->cast($key, $value);
             return $value;
         } else {
             throw new UnknownKeyException("Unknown context key: '{$key}' has requested");
         }
+    }
+
+    private function resolve($key, $default = null){
+        return ((key_exists($key, $_ENV)) ? $_ENV[$key] : $default);
     }
 }
 
