@@ -19,17 +19,19 @@ namespace Context;
  * configuration options:
  * - default value (NULL means this key is mandatory)
  * - cast function
+ *
+ * @author Petr Saganov <saganoff@gmail.com>
  */
-interface IContext
+interface ContextInterface
 {
     /**
      * Constructor have to consume a Context Driver
      *
-     * @param IContextDriver $driver concrete context driver
+     * @param ContextDriverInterface $driver concrete context driver
      *
-     * @return IContext
+     * @return ContextInterface
      */
-    public function __construct(IContextDriver $driver);
+    public function __construct(ContextDriverInterface $driver);
 
     /**
     * Register new context configuration option

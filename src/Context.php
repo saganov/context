@@ -11,11 +11,11 @@
 
 namespace Context;
 
-class Context implements IContext
+class Context implements ContextInterface
 {
     private $driver;
     private $items;
-    public function __construct(IContextDriver $driver, Array $items = []){
+    public function __construct(ContextDriverInterface $driver, Array $items = []){
         $this->driver = $driver;
         $this->items = $items;
     }

@@ -22,7 +22,7 @@ namespace Context;
  * - HTTP request parameters
  * etc.
  */
-interface IContextDriver
+interface ContextDriverInterface
 {
     /**
      * Try to resolve value of retrieved context key

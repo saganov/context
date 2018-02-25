@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 use Context\Context;
-use Context\IContextDriver;
+use Context\ContextDriverInterface;
 use Context\RequiredKeyException;
 
 class ContextTest extends TestCase
@@ -10,7 +10,7 @@ class ContextTest extends TestCase
     private $context;
     private $driver;
     public function setUp(){
-        $this->driver = $this->createMock(IContextDriver::class);
+        $this->driver = $this->createMock(ContextDriverInterface::class);
         $this->context = new Context($this->driver);
     }
 
