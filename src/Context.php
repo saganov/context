@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
  * This file is part of the SContext package.
  *
  * (c) Petr Saganov <saganoff@gmail.com>

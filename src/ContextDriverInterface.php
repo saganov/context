@@ -21,6 +21,8 @@ namespace Context;
  * - XML-files
  * - HTTP request parameters
  * etc.
+ *
+ * @author Petr Saganov <saganoff@gmail.com>
  */
 interface ContextDriverInterface
 {
@@ -32,6 +34,7 @@ interface ContextDriverInterface
      * INI-files, XML-files, HTTP parameters etc.
      *
      * @param string $key     Key of the context configuration option
+     * @param mixed  $default Default value to return in case the key wasn't set
      *
      * @return mixed
      */

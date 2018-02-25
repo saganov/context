@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
  * This file is part of the Context package.
  *
  * (c) Petr Saganov <saganoff@gmail.com>
