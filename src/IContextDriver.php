@@ -25,15 +25,6 @@ namespace Context;
 interface IContextDriver
 {
     /**
-     * Constructor have to consume a Schem
-     *
-     * @param IScheme $scheme Scheme of the configutration context
-     *
-     * @return IContextDriver
-     */
-    public function __construct(IScheme $scheme);
-  
-    /**
      * Try to resolve value of retrieved context key
      *
      * Resolve the value of key according to the concrete implementation
@@ -44,5 +35,5 @@ interface IContextDriver
      *
      * @return mixed
      */
-    public function get($key);
+    public function get($key, $default = null);
 }

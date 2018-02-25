@@ -1,56 +1,26 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use Context\IScheme;
 use Context\EnvContext;
-use Context\RequiredKeyException;
 
-class ContextTest extends TestCase
+class DriverTest extends TestCase
 {
-    private $context;
-    private $scheme;
+    private $driver;
     public function setUp(){
-        $this->scheme = $this->createMock(IScheme::class);
-        $this->context = new EnvContext($this->scheme);
-        $this->scheme->method('contains')->willReturn(true);
+        $this->driver = new EnvContext();
     }
 
-    public function testContextRetrievingSetOptionalValue(){
+    public function testGetStringKey(){
         $value = 42;
-        $key   = 'env_var_1';
+        $key   = 'env_string_option';
         $_ENV[$key] = $value;
-        $this->scheme->method('defaultVal')->willReturn(null);
-        $this->scheme->method('cast')->willReturn((string)$value);
-        $this->assertEquals((string)$value, $this->context->get($key));
+        $this->assertEquals((string)$value, $this->driver->get($key));
     }
 
-    public function testReadStringVariableWithoutDefault() {
-        $value = "string-value";
-        $key   = 'env_var_string_1';
-        $_ENV[$key] = $value;
-        $this->scheme->method('defaultVal')->willReturn(null);
-        $this->scheme->method('cast')->willReturn((string)$value);
-        $this->assertEquals((string)$value, $this->context->get($key));
-    }
-    public function testReadStringVariableWithDefault() {
+    public function testGetNonSetKey() {
         $value = "string-value";
         $key   = 'env_var_string_2';
         $default = "default";
-        $_ENV[$key] = $value;
-        $this->scheme->method('cast')->willReturn((string)$value);
-        $this->scheme->method('defaultVal')->willReturn($default);
-        $this->assertEquals((string)$value, $this->context->get($key));
-    }
-    public function testReadUnsetVariableWithDefault() {
-        $default = "default";
-        $this->scheme->method('cast')->willReturn((string)$default);
-        $this->scheme->method('defaultVal')->willReturn($default);
-        $this->assertEquals((string)$default, $this->context->get('env_var_unset'));
-    }
-    public function testReadUnsetVariableWithoutDefault() {
-        $this->scheme->method('defaultVal')->willReturn(null);
-        $this->scheme->method('cast')->willReturn((string)42);
-        $this->expectException(RequiredKeyException::class);
-        $this->context->get('env_var_unset');
+        $this->assertEquals($default, $this->driver->get($key, $default));
     }
 }

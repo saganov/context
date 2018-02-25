@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the SContext package.
+ * This file is part of the Context package.
  *
  * (c) Petr Saganov <saganoff@gmail.com>
  *
@@ -12,7 +12,7 @@
 namespace Context;
 
 /**
- * Scheme of the context configuration
+ * This is a Scheme of the context configuration
  *
  * In fact this is just container that contains a scheme.
  * In fact it is a map - key to the description of the 
@@ -20,44 +20,38 @@ namespace Context;
  * - default value (NULL means this key is mandatory)
  * - cast function
  */
-interface IScheme
+interface IContext
 {
+    /**
+     * Constructor have to consume a Context Driver
+     *
+     * @param IContextDriver $driver concrete context driver
+     *
+     * @return IContext
+     */
+    public function __construct(IContextDriver $driver);
+
     /**
     * Register new context configuration option
     *
     * @param string $key           Key of the context option
     * @param mixed  $default       Default value for the key. NULL means the key is required
-    * @param Closure $castFunction Function to cast provided value. NULL means cast to String
+    * @param \Closure $castFunction Function to cast provided value. NULL means cast to String
     *
     * @return IScheme
     */
     public function add($key, $default = null, $castFunction = null);
 
     /**
-     * Verify if the key has already registered
+     * Try to resolve value of retrieved context key
      *
-     * @param string $key Key of the context option
+     * Resolve the value of key according to the concrete context driver
+     * It could resolve from environment variables, command line interface,
+     * INI-files, XML-files, HTTP parameters etc.
      *
-     * @return boolean
-     */
-    public function contains($key);
-
-    /**
-     * Provide default value of registered context key
-     *
-     * @param string $key Key of the context option
+     * @param string $key     Key of the context configuration option
      *
      * @return mixed
      */
-    public function defaultVal($key);
-
-    /**
-     * Cast the provided value according to the registered cast function
-     *
-     * @param string $key   Key of the context option
-     * @param mixed  $value a Value to cast
-     *
-     * @return mixed
-     */
-    public function cast($key, $value);
+    public function get($key);
 }
