@@ -13,7 +13,7 @@ class DriverTest extends TestCase
     public function testGetStringKey(){
         $value = 42;
         $key   = 'env_string_option';
-        $_ENV[$key] = $value;
+        putenv("{$key}={$value}");
         $this->assertEquals((string)$value, $this->driver->get($key));
     }
 

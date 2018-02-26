@@ -14,10 +14,13 @@ namespace Context;
 /**
  * Concrete implementation of Context Driver that resolves environment variables
  *
+ * Resolve data from environment variables via internal function `getenv`
+ *
+ * @author Petr Saganov <saganoff@gmail.com>
  */
 class EnvContext implements ContextDriverInterface
 {
     public function get($key, $default = null){
-        return ((key_exists($key, $_ENV)) ? $_ENV[$key] : $default);
+        return (getenv($key) ?: $default);
     }
 }
