@@ -43,14 +43,31 @@ class ContextTest extends TestCase
         $this->driver->method('get')->willReturn($input);
         $this->assertEquals($expected, $this->context->get($key));
     }
-    /*
-    public function testReadUnsetVariableWithoutDefault() {
-        $this->scheme->method('defaultVal')->willReturn(null);
-        $this->scheme->method('cast')->willReturn((string)42);
-        $this->expectException(RequiredKeyException::class);
-        $this->context->get('env_var_unset');
+    /**
+    * @dataProvider validEnumKeysProvider
+    */
+    public function testGetEnumValid($input, $expected){
+        $key = 'context_enum_key';
+        $available = ['one', 'two', 'three'];
+        $cast_function = function($v) use ($available){
+            if (in_array($v, $available)) {
+                return $v;
+            } else {
+                throw new InvalidValueException();
+            }
+        };
+        $this->context->add($key, null, $cast_function);
+        $this->driver->method('get')->willReturn($input);
+        $this->assertEquals($expected, $this->context->get($key));
     }
-     */
+    public function testRequiredKey() {
+        $key = 'context_required_key';
+        $this->context->add($key, Context::REQUIRED_KEY);
+        $this->driver->method('get')->willReturn(Context::REQUIRED_KEY);
+        $this->expectException(RequiredKeyException::class);
+        $this->context->get($key);
+    }
+    
     public function stringKeysProvider()
     {
         return [
@@ -80,7 +97,7 @@ class ContextTest extends TestCase
             [1+1, 2],
             [false, 0],
             [true, 1],
-            //[null, 0],
+            [null, 0],
         ];
     }
     public function booleanKeysProvider()
@@ -99,9 +116,17 @@ class ContextTest extends TestCase
             [1+1, true],
             [false, false],
             [true, true],
-            //[null, false],
+            [null, false],
             //['on', true],
             //['off', false],
+        ];
+    }
+    public function validEnumKeysProvider()
+    {
+        return [
+            ['one', 'one'],
+            ['two', 'two'],
+            ['three', 'three'],
         ];
     }
 }
