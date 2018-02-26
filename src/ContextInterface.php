@@ -22,8 +22,20 @@ namespace Context;
  *
  * @author Petr Saganov <saganoff@gmail.com>
  */
-interface ContextInterface
+interface ContextInterface extends ContextDriverInterface
 {
+    /**
+     * The constants to mark a key as a required
+     *
+     * Use to define a key as a required by set this value
+     * as a default key value
+     *
+     * ```php
+     * ContextInterface::add('required_key', ContextInterface::REQUIRED_KEY);
+     * ```
+     */
+    const REQUIRED_KEY = self::class .'\required-key';
+
     /**
      * Constructor have to consume a Context Driver
      *
@@ -34,26 +46,14 @@ interface ContextInterface
     public function __construct(ContextDriverInterface $driver);
 
     /**
-    * Register new context configuration option
-    *
-    * @param string $key           Key of the context option
-    * @param mixed  $default       Default value for the key. NULL means the key is required
-    * @param \Closure $castFunction Function to cast provided value. NULL means cast to String
-    *
-    * @return IScheme
-    */
-    public function add($key, $default = null, $castFunction = null);
-
-    /**
-     * Try to resolve value of retrieved context key
+     * Register new context configuration option
      *
-     * Resolve the value of key according to the concrete context driver
-     * It could resolve from environment variables, command line interface,
-     * INI-files, XML-files, HTTP parameters etc.
+     * @param string            $key           Key of the context option
+     * @param mixed             $default       Default value for the key
+     * @param \Closure | string $castFunction  Function to cast provided value
+     *                                         or string key of predefined cast functions
      *
-     * @param string $key     Key of the context configuration option
-     *
-     * @return mixed
+     * @return ContextInerface
      */
-    public function get($key);
+    public function add($key, $default = null, $castFunction = 'string');
 }
