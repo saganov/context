@@ -114,7 +114,7 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">17</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">19</span>
                                 </a>
                             </li>
                             <li>
@@ -144,19 +144,19 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-2046397497"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1794553428"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-2046397497" class="accordion-body collapse in">
+            <div id="namespace-1794553428" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-257062963"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-137226307"></a>
                                 <a href="../namespaces/Context.html" style="margin-left: 30px; padding-left: 0">Context</a>
             </div>
-            <div id="namespace-257062963" class="accordion-body collapse ">
+            <div id="namespace-137226307" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                     
@@ -165,6 +165,7 @@
                                                     <li class="interface"><a href="../classes/Context.ContextInterface.html">ContextInterface</a></li>
                                                                                                     <li class="class"><a href="../classes/Context.Context.html">Context</a></li>
                                                     <li class="class"><a href="../classes/Context.EnvContext.html">EnvContext</a></li>
+                                                    <li class="class"><a href="../classes/Context.InvalidCastFunctionException.html">InvalidCastFunctionException</a></li>
                                                     <li class="class"><a href="../classes/Context.RequiredKeyException.html">RequiredKeyException</a></li>
                                                     <li class="class"><a href="../classes/Context.UnknownKeyException.html">UnknownKeyException</a></li>
                                             </ul>
@@ -239,8 +240,9 @@
                                                                     <em>No private methods found</em>
                                                             </section>
                             <section class="span4">
-                                                                    <a href="../classes/Context.Context.html#property_driver" class="">$driver</a><br />
                                                                     <a href="../classes/Context.Context.html#property_items" class="">$items</a><br />
+                                                                    <a href="../classes/Context.Context.html#property_driver" class="">$driver</a><br />
+                                                                    <a href="../classes/Context.Context.html#property_cast_functions" class="">$cast_functions</a><br />
                                                             </section>
                             <section class="span4">
                                 <em>N/A</em>
@@ -286,6 +288,30 @@
 
                                                                     <div class="row-fluid">
         <div class="span8 content class">
+            <a id="property_items" name="property_items" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$items</h3>
+                <pre class="signature">$items : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
             <a id="property_driver" name="property_driver" class="anchor"></a>
             <article class="property">
                 <h3 class="private ">$driver</h3>
@@ -310,10 +336,10 @@
 
                                     <div class="row-fluid">
         <div class="span8 content class">
-            <a id="property_items" name="property_items" class="anchor"></a>
+            <a id="property_cast_functions" name="property_cast_functions" class="anchor"></a>
             <article class="property">
-                <h3 class="private ">$items</h3>
-                <pre class="signature">$items : </pre>
+                <h3 class="private ">$cast_functions</h3>
+                <pre class="signature">$cast_functions : </pre>
                 <p><em></em></p>
                 
 
@@ -345,7 +371,7 @@
             <article class="method">
                 <h3 class="public ">__construct()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">__construct(\Context\ContextDriverInterface  <span class="argument">$driver</span>, array  <span class="argument">$items = array()</span>) : \Context\ContextInterface</pre>
+                <pre class="signature" style="margin-right: 54px;">__construct(\Context\ContextDriverInterface  <span class="argument">$driver</span>) : \Context\ContextInterface</pre>
                 <p><em>Constructor have to consume a Context Driver</em></p>
                 
 
@@ -355,11 +381,6 @@
                                 <td><a href="../classes/Context.ContextDriverInterface.html">\Context\ContextDriverInterface</a></td>
                                 <td>$driver </td>
                                 <td><p>concrete context driver</p></td>
-                            </tr>
-                                                    <tr>
-                                <td>array</td>
-                                <td>$items </td>
-                                <td></td>
                             </tr>
                                             </table>
                 
@@ -386,7 +407,7 @@
             <article class="method">
                 <h3 class="public ">add()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">add(string  <span class="argument">$key</span>, mixed  <span class="argument">$default = null</span>, \Closure  <span class="argument">$castFunction = null</span>) : \Context\IScheme</pre>
+                <pre class="signature" style="margin-right: 54px;">add(string  <span class="argument">$key</span>, mixed  <span class="argument">$default = null</span>,   <span class="argument">$castFunction = &#039;string&#039;</span>) : \Context\ContextInerface</pre>
                 <p><em>Register new context configuration option</em></p>
                 
 
@@ -400,18 +421,18 @@
                                                     <tr>
                                 <td>mixed</td>
                                 <td>$default </td>
-                                <td><p>Default value for the key. NULL means the key is required</p></td>
+                                <td><p>Default value for the key</p></td>
                             </tr>
                                                     <tr>
-                                <td>\Closure</td>
+                                <td></td>
                                 <td>$castFunction </td>
-                                <td><p>Function to cast provided value. NULL means cast to String</p></td>
+                                <td></td>
                             </tr>
                                             </table>
                 
                 
                                     <h4>Returns</h4>
-                    \Context\IScheme
+                    \Context\ContextInerface
                                     				
                             </article>
         </div>
@@ -432,25 +453,26 @@
             <article class="method">
                 <h3 class="public ">get()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">get(string  <span class="argument">$key</span>) : mixed</pre>
-                <p><em>Try to resolve value of retrieved context key</em></p>
-                <p>Resolve the value of key according to the concrete context driver
-It could resolve from environment variables, command line interface,
-INI-files, XML-files, HTTP parameters etc.</p>
+                <pre class="signature" style="margin-right: 54px;">get(  <span class="argument">$key</span>,   <span class="argument">$default = null</span>) </pre>
+                <p><em></em></p>
+                
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td>string</td>
+                                <td></td>
                                 <td>$key </td>
-                                <td><p>Key of the context configuration option</p></td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$default </td>
+                                <td></td>
                             </tr>
                                             </table>
                 
                 
-                                    <h4>Returns</h4>
-                    mixed
-                                    				
+                				
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -514,7 +536,7 @@ INI-files, XML-files, HTTP parameters etc.</p>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on February 25th, 2018 at 12:13.
+                    on February 26th, 2018 at 22:57.
                 </section>
             </section>
         </section>
