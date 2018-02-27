@@ -36,7 +36,7 @@ Implementation
 
 Class diagram of prototype:
 
-![Context prototype](http://www.plantuml.com/plantuml/png/TP312i8m38RlUOeUrT4ty31G3vu5xw7DjD1sq6H3KD_Tsgsu7Jmb97--FqdBWac6uC55eTIX8NM-c3i5UaA3rcwsq9W-2hh8tznIXuENA_hIGPOStylfGrRJGux9ZPGov4QJn7XaLfMjdL3WfGMxmlhdC8sVuZZpCu8BgpheHDpxaOeQrcielQjdmHpL_gMrghMLkdH-Jj1IjFb57m00)
+![Context prototype](http://www.plantuml.com/plantuml/png/VP1T2eCm48JVznHvir9pWnQ4_a2F4P9LGkCAoKPQREzUgzW_hM_BCFCnitbWvJbM3Ymn-a9f5BkwEo-yzxP1Vnhb5jObykgCrqmOB5HqBBQ2edCftAVfpvmoPYwN2Qq27oDfjZLrOXBOMogJ9n2qKo6Cj1QaPQm2IDEt6fZfOgK1SA3cnLXom_ngiRb9ETa4lyANxG-gjxphG8vakiS_0000)
 
 <details>
 <summary>Source code for PlantUML:</summary>
@@ -44,31 +44,26 @@ Class diagram of prototype:
 
 ```
 @startuml
-interface IScheme{
-+add()
-+contains()
-+defaultVal()
-+cast()
+interface ContextDriverInterface{
++get(key, default = null)
 }
-interface IContextDriver{
-+get()
-}
-class Scheme{
--items
-+add()
-+consist()
-+defaultVal()
-+cast()
-}
-class EnvContext{
--scheme
-+get()
--resolve()
+interface ContextInterface{
++add(key, default = null, castFunction = 'string')
 }
 
-IContextDriver -* IScheme
-IScheme <|-- Scheme
-IContextDriver<|-- EnvContext
+class Context{
+-items
+-driver
++add()
++get(key, default = null)
+}
+class EnvContext{
++get(key, default = null)
+}
+
+ContextDriverInterface <|-- ContextInterface
+ContextInterface <|-- Context
+ContextDriverInterface<|-- EnvContext
 @enduml
 ```
 
